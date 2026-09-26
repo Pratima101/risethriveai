@@ -65,7 +65,10 @@
     .btn-secondary:hover { border-color:var(--purple); }
 
     /* DEMO VIDEO */
-    .demo-video-wrap { max-width:300px; margin:0 auto; aspect-ratio:9/16; border-radius:24px; overflow:hidden; border:1px solid var(--border); box-shadow:0 20px 60px rgba(0,0,0,.45); background:var(--card); }
+    .demo-split { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+    .demo-split-text { flex:1; min-width:260px; text-align:left; }
+    .demo-split-text .sec-title, .demo-split-text .sec-sub { text-align:left; }
+    .demo-video-wrap { max-width:280px; width:100%; margin:0; flex-shrink:0; aspect-ratio:9/16; border-radius:24px; overflow:hidden; border:1px solid var(--border); box-shadow:0 20px 60px rgba(0,0,0,.45); background:var(--card); }
     .demo-video-wrap iframe { width:100%; height:100%; display:block; border:0; }
 
     /* SECTIONS (shared) */
@@ -191,6 +194,10 @@
       .services-grid, .who-grid, .benefits-grid, .steps-row { grid-template-columns:1fr; }
       .chat-panel { right:16px; left:16px; width:auto; }
       .chat-toggle { right:16px; }
+      .demo-split { flex-direction:column; text-align:center; }
+      .demo-split-text { text-align:center; }
+      .demo-split-text .sec-title, .demo-split-text .sec-sub { text-align:center; }
+      .demo-video-wrap { margin:0 auto; }
     }
   </style>
 </head>
@@ -229,12 +236,16 @@
 
 <!-- DEMO VIDEO -->
 <section class="sec sec-alt" id="demo-video">
-  <div class="sec-inner" style="text-align:center;">
-    <div class="tag">See It In Action</div>
-    <h2 class="sec-title">Watch Your AI Employee<br/><span class="gt">At Work</span></h2>
-    <p class="sec-sub" style="margin:0 auto 8px;">Real calls, real bookings — see exactly how it sounds in action.</p>
-    <div class="demo-video-wrap">
-      <div id="ytDemoPlayer"></div>
+  <div class="sec-inner">
+    <div class="demo-split">
+      <div class="demo-split-text">
+        <div class="tag">See It In Action</div>
+        <h2 class="sec-title">Watch Your AI Employee<br/><span class="gt">At Work</span></h2>
+        <p class="sec-sub" style="margin:0;">Real calls, real bookings — see exactly how it sounds in action.</p>
+      </div>
+      <div class="demo-video-wrap">
+        <div id="ytDemoPlayer"></div>
+      </div>
     </div>
   </div>
 </section>
